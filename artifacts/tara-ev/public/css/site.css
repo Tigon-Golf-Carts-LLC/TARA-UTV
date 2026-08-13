@@ -79,15 +79,15 @@
   .head-layer .layout {
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     min-height: 0 !important;
     width: 100% !important;
   }
   .logo, .web-head .logo, .index-web-head .logo {
     float: none !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 15px !important;
+    text-align: left !important;
   }
   .logo a { display: inline-block !important; }
   .logo img { max-height: 44px !important; width: auto !important; }
