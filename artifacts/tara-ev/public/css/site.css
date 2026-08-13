@@ -59,6 +59,15 @@
 }
 
 /* ── Mobile header cleanup ─────────────────────────────── */
+/* The site's JS only builds the hamburger/drawer at winWidth <= 950,
+   so hide the desktop nav only at the same breakpoint to avoid a
+   951–991px dead zone with no navigation. */
+@media (max-width: 950px) {
+  /* Desktop nav & right-side controls still occupy flex space on mobile,
+     pushing the logo to the left — remove them from layout entirely.
+     (The mobile drawer clones .head-nav via JS, so this is display-only.) */
+  .head-layer .nav-wrap, .head-layer .head-right { display: none !important; }
+}
 @media (max-width: 991px) {
   /* Hide JS-injected language + search items in the mobile top bar */
   .mobile-head-item.mobile-head-language,
@@ -82,10 +91,6 @@
   }
   .logo a { display: inline-block !important; }
   .logo img { max-height: 44px !important; width: auto !important; }
-  /* Desktop nav & right-side controls still occupy flex space on mobile,
-     pushing the logo to the left — remove them from layout entirely.
-     (The mobile drawer clones .head-nav via JS, so this is display-only.) */
-  .head-layer .nav-wrap, .head-layer .head-right { display: none !important; }
   .logo, .web-head .logo { height: auto !important; }
 
   /* Hamburger on the RIGHT side of the mobile top bar */
