@@ -1,6 +1,6 @@
-# TARA Electric Vehicles
+# TARA Utility Task Vehicles (UTV)
 
-Full rebuild (clone) of the client's website taragolfcart.com for TARA Electric Vehicles — all 650 pages with original images and content.
+Full rebuild (clone) of the client's website, rebranded August 2026 from taragolfcart.com (TARA Electric Vehicles / golf carts) to tarautv.com — "TARA Utility Task Vehicles (UTV)" is the target SEO keyword and appears in every page title, header, and meta description. All 650 pages with original images and content. Note: URL slugs and image filenames still contain "golf-cart"/"nev" — intentionally untouched to avoid breaking routes/assets.
 
 ## Run & Operate
 
@@ -52,7 +52,7 @@ The contact page (`/contact/`) now uses a self-hosted inquiry form instead of th
 - Frontend: `artifacts/tara-ev/src/inquiryForm.ts` — renders the form and posts to the API server
 - Backend: `artifacts/api-server/src/routes/inquiries.ts` — validates and delivers via Gmail
 - Email delivery: `artifacts/api-server/src/lib/email.ts` — uses the Gmail Replit connector (`google-mail`)
-- Recipient: `sales@taragolfcart.com`
+- Recipient: `sales@tarautv.com`
 
 ## Gotchas
 
