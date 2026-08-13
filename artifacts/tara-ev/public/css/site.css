@@ -65,11 +65,47 @@
   .mobile-head-item.mobile-head-search,
   .mobile-head-item.mobile-head-currency { display: none !important; }
 
-  /* Compact header bar with a properly sized logo */
+  /* Compact header bar with a properly sized, centered logo */
   .head-layer { padding: 6px 0 !important; }
-  .head-layer .layout { display: flex; align-items: center; justify-content: center; min-height: 0 !important; }
-  .logo { margin: 0 !important; padding: 0 !important; }
-  .logo img { max-height: 44px !important; }
+  .head-layer .layout {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 0 !important;
+    width: 100% !important;
+  }
+  .logo, .web-head .logo, .index-web-head .logo {
+    float: none !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+  .logo a { display: inline-block !important; }
+  .logo img { max-height: 44px !important; width: auto !important; }
+  /* Desktop nav & right-side controls still occupy flex space on mobile,
+     pushing the logo to the left — remove them from layout entirely.
+     (The mobile drawer clones .head-nav via JS, so this is display-only.) */
+  .head-layer .nav-wrap, .head-layer .head-right { display: none !important; }
+  .logo, .web-head .logo { height: auto !important; }
+
+  /* Hamburger on the RIGHT side of the mobile top bar */
+  .mobile-head-item.mobile-head-nav { float: right !important; }
+
+  /* Mobile nav drawer opens from the RIGHT (slides toward the left).
+     The site script animates the inline `left` style, so neutralize it
+     with !important and drive the position from the toggled class. */
+  .mobile-head-item .side-content-wrap {
+    left: auto !important;
+    right: -70%;
+    transition: right 0.3s ease-in-out;
+  }
+  .mobile-head-item .side-content-wrap.show-content-wrap { right: 0; }
+
+  /* Close button sits outside the drawer's LEFT edge now */
+  .mobile-head-item .side-content-wrap .mobile-ico-close {
+    right: auto !important;
+    left: -35px !important;
+  }
 }
 
 /* ── Site-wide Call Now button ─────────────────────────── */
