@@ -183,7 +183,7 @@ export default function App() {
           footer.innerHTML = `
             <div class="tf-inner">
               <div class="tf-col tf-brand">
-                <img src="${BASE}images/tara-nev-logo.png" alt="TARA Utility Task Vehicles (UTV)" />
+                <img src="${BASE}images/tara-utv-logo.png" alt="TARA Utility Task Vehicles (UTV)" />
                 <p>TARA Utility Task Vehicles (UTV) — sales, service, and support for electric utility task vehicles, UTVs, and utility vehicles.</p>
                 <p class="tf-disclaimer">We are an independent, authorized dealership selling TARA vehicles. We are not TARA, the manufacturer.</p>
                 <a class="tf-phone" href="tel:8448443432">&#9742; 844-844-3432</a>
@@ -193,18 +193,18 @@ export default function App() {
                 <a href="/t1-series/">T1 Utility Task Vehicle Series</a>
                 <a href="/t2-series/">T2 Utility Task Vehicle Series</a>
                 <a href="/t3-series/">T3 Street Legal Series</a>
-                <a href="/fleet-golf-carts/">Fleet Utility Task Vehicles</a>
+                <a href="/fleet-utvs/">Fleet Utility Task Vehicles</a>
                 <a href="/accessories/">Accessories</a>
               </div>
               <div class="tf-col">
                 <h4>Popular Models</h4>
-                <a href="/harmony-fleet-golf-cart-product/">Harmony</a>
-                <a href="/spirit-pro-fleet-golf-cart-product/">Spirit Pro</a>
-                <a href="/spirit-plus-fleet-golf-cart-product/">Spirit Plus</a>
-                <a href="/roadster-2-2-golf-cart-product/">Roadster 2+2</a>
-                <a href="/explorer-2-2-golf-cart-product/">Explorer 2+2</a>
+                <a href="/harmony-fleet-utv-product/">Harmony</a>
+                <a href="/spirit-pro-fleet-utv-product/">Spirit Pro</a>
+                <a href="/spirit-plus-fleet-utv-product/">Spirit Plus</a>
+                <a href="/roadster-2-2-utv-product/">Roadster 2+2</a>
+                <a href="/explorer-2-2-utv-product/">Explorer 2+2</a>
                 <a href="/turfman-700-utility-vehicle-product/">Turfman 700</a>
-                <a href="/t3-2-2-golf-cart-product/">T3 2+2</a>
+                <a href="/t3-2-2-utv-product/">T3 2+2</a>
               </div>
               <div class="tf-col">
                 <h4>Support</h4>

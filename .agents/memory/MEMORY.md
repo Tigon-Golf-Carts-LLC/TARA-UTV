@@ -1,4 +1,4 @@
-- [UTV rebrand](utv-rebrand.md) — site is now TARA Utility Task Vehicles (UTV) / tarautv.com; no golf-cart/NEV wording in text, but URL slugs & filenames keep old names on purpose.
+- [UTV rebrand](utv-rebrand.md) — site is TARA UTV / tarautv.com; product slugs now utv-based with old-slug redirects kept in lockstep in routes.json + server.mjs + vite.config.ts; news slugs still golf-era.
 - [TARA site clone architecture](site-clone-architecture.md) — tara-ev is a static HTML content mirror; edit public/content/*.html, not React components.
 - [Client-requested removals](client-requested-removals.md) — inquiry form, floating widgets, footer, press section are deleted; merges have restored them before — re-grep after every merge.
 - [Clone layout quirks](clone-layout-quirks.md) — `.container` was 100vh with overflow (hid injected footer below fold); FAQ/support pages share the product-spec accordion markup; mega-menu panels must stay hidden unless active or full-width panels cover sibling tabs.

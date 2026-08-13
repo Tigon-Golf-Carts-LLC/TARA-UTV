@@ -8,7 +8,7 @@
 
 const SITE_URL = 'https://www.tarautv.com';
 const SITE_NAME = 'TARA Utility Task Vehicles (UTV)';
-const LOGO_URL = `${SITE_URL}/images/tara-nev-logo.png`;
+const LOGO_URL = `${SITE_URL}/images/tara-utv-logo.png`;
 const PHONE = '+1-844-844-3432';
 
 // ---------------------------------------------------------------------------
@@ -218,11 +218,11 @@ const SERIES_ITEMS: Record<string, { name: string; url: string }[]> = {
   // t1-series.html lists (in order): Spirit Plus, Spirit Pro, Roadster 2+2,
   // Explorer 2+2, Harmony.
   '/t1-series/': [
-    { name: 'Spirit Plus',   url: `${SITE_URL}/spirit-plus-fleet-golf-cart-product/` },
-    { name: 'Spirit Pro',    url: `${SITE_URL}/spirit-pro-fleet-golf-cart-product/` },
-    { name: 'Roadster 2+2', url: `${SITE_URL}/roadster-2-2-golf-cart-product/` },
-    { name: 'Explorer 2+2', url: `${SITE_URL}/explorer-2-2-golf-cart-product/` },
-    { name: 'Harmony',      url: `${SITE_URL}/harmony-fleet-golf-cart-product/` },
+    { name: 'Spirit Plus',   url: `${SITE_URL}/spirit-plus-fleet-utv-product/` },
+    { name: 'Spirit Pro',    url: `${SITE_URL}/spirit-pro-fleet-utv-product/` },
+    { name: 'Roadster 2+2', url: `${SITE_URL}/roadster-2-2-utv-product/` },
+    { name: 'Explorer 2+2', url: `${SITE_URL}/explorer-2-2-utv-product/` },
+    { name: 'Harmony',      url: `${SITE_URL}/harmony-fleet-utv-product/` },
   ],
   // t2-series.html lists: Turfman 700, Turfman 700 EEC, Turfman 1000, Turfman 450.
   '/t2-series/': [
@@ -233,7 +233,7 @@ const SERIES_ITEMS: Record<string, { name: string; url: string }[]> = {
   ],
   // t3-series.html currently lists only T3 2+2.
   '/t3-series/': [
-    { name: 'T3 2+2', url: `${SITE_URL}/t3-2-2-golf-cart-product/` },
+    { name: 'T3 2+2', url: `${SITE_URL}/t3-2-2-utv-product/` },
   ],
 };
 
