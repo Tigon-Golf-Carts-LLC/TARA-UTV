@@ -69,6 +69,34 @@ check "inquiry form section (section.inquiry-form-wrap)" \
 check "Online Service floating sidebar (aside.scrollsidebar)" \
   '<aside[^>]*class="[^"]*scrollsidebar'
 
+# Page titles in routes.json must stay <=60 chars and unique (SEO trim, Task 15-era).
+# Past merges have restored old long/duplicate titles — guard against regression.
+check_titles() {
+  local file="$1" label="$2"
+  [ -f "$file" ] || return 0
+  local out
+  out=$(node -e '
+    const routes = require(process.argv[1]);
+    const seen = new Map();
+    let bad = [];
+    for (const [route, cfg] of Object.entries(routes)) {
+      if (!cfg || typeof cfg.title !== "string") continue;
+      const t = cfg.title;
+      if (t.length > 60) bad.push(`TOO LONG (${t.length} chars) ${route}: ${t}`);
+      if (seen.has(t)) bad.push(`DUPLICATE title "${t}" on ${route} (also ${seen.get(t)})`);
+      else seen.set(t, route);
+    }
+    if (bad.length) { console.log(bad.join("\n")); process.exit(1); }
+  ' "$PWD/$file" 2>&1) || {
+    echo "PAGE TITLE CHECK FAILED — $label:"
+    echo "$out" | head -20
+    fail=1
+  }
+}
+
+check_titles public/content/routes.json "source routes.json"
+check_titles dist/public/content/routes.json "built routes.json"
+
 if [ "$fail" -eq 0 ]; then
   echo "OK: no removed inquiry form, popups, widgets, or footer found"
 fi
