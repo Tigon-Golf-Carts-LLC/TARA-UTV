@@ -38,9 +38,10 @@ check() {
   fi
 }
 
-# Vendored Mautic form scripts must not exist at all
+# Vendored Mautic form scripts and the retired NEV-brand logo must not exist at all
 for f in public/js/form-generate.js public/js/mautic-form.js \
-         dist/public/js/form-generate.js dist/public/js/mautic-form.js; do
+         dist/public/js/form-generate.js dist/public/js/mautic-form.js \
+         public/images/tara-nev-logo.png dist/public/images/tara-nev-logo.png; do
   if [ -e "$f" ]; then
     echo "REMOVED FILE REAPPEARED: $f"
     fail=1
