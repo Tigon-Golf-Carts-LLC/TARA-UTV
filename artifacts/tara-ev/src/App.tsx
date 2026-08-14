@@ -190,21 +190,16 @@ export default function App() {
               </div>
               <div class="tf-col">
                 <h4>Vehicles</h4>
-                <a href="/t1-series/">T1 Utility Task Vehicle Series</a>
                 <a href="/t2-series/">T2 Utility Task Vehicle Series</a>
-                <a href="/t3-series/">T3 Street Legal Series</a>
                 <a href="/fleet-utvs/">Fleet Utility Task Vehicles</a>
                 <a href="/accessories/">Accessories</a>
               </div>
               <div class="tf-col">
-                <h4>Popular Models</h4>
-                <a href="/harmony-fleet-utv-product/">Harmony</a>
-                <a href="/spirit-pro-fleet-utv-product/">Spirit Pro</a>
-                <a href="/spirit-plus-fleet-utv-product/">Spirit Plus</a>
-                <a href="/roadster-2-2-utv-product/">Roadster 2+2</a>
-                <a href="/explorer-2-2-utv-product/">Explorer 2+2</a>
+                <h4>Models</h4>
+                <a href="/turfman-450-utility-vehicle-product/">Turfman 450</a>
                 <a href="/turfman-700-utility-vehicle-product/">Turfman 700</a>
-                <a href="/t3-2-2-utv-product/">T3 2+2</a>
+                <a href="/turfman-700-eec-utility-vehicle-product/">Turfman 700 EEC</a>
+                <a href="/turfman-1000-utility-vehicle-product/">Turfman 1000</a>
               </div>
               <div class="tf-col">
                 <h4>Support</h4>
