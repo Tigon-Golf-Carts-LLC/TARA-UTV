@@ -7,3 +7,4 @@
 - [Overseas news text audit](overseas-text-audit.md) — US-only framing rule: no overseas or global/export claims in news bodies, card excerpts, or alt text; re-audit after merges.
 - [Mega-menu edit quirks](menu-edit-quirks.md) — menu duplicated in all ~578 content pages; ~18 legacy pages carry a tab-indented Horizon/Lander variant; site is now T2/Turfman-only in all nav.
 - [Page retirement checklist](page-retirement-checklist.md) — retiring a URL also means deleting public/content/*.html and scrubbing the AI/SEO manifest txts, not just redirects+sitemaps.
+- [SEO meta rules](seo-meta-rules.md) — routes.json titles ≤60 chars/unique (guarded); descriptions must be complete sentences ≤155, no ellipsis/boilerplate; stale dist fails the guard — rebuild after meta edits.
