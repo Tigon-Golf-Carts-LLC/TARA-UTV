@@ -7,17 +7,13 @@ Service area: Nationwide, United States
 Hours: Every day, 9am–5pm
 About: Independent, authorized US dealership selling TARA electric utility task vehicles, utility task vehicles (UTVs), and electric utility vehicles. Sales, service, financing, and warranty support for golf courses, resorts, gated communities, and private owners. We are not TARA, the manufacturer.
 Vehicle lines:
-- T1 Utility Task Vehicle Series: Harmony, Spirit Pro, Spirit Plus, Roadster 2+2, Explorer 2+2 — fleet and personal utility task vehicles
-- T2 Utility Task Vehicle Series: Turfman 450, Turfman 700, Turfman 1000 — electric utility vehicles for maintenance and logistics
-- T3 Street Legal Series: T3 2+2, Rambler, Rambler SE, Vogue 2+2, Vogue — street-legal UTVs for communities
+- T2 Utility Task Vehicle Series: Turfman 450, Turfman 700, Turfman 700 EEC, Turfman 1000 — electric utility vehicles for maintenance and logistics; Turfman 700 EEC is street-legal
 Financing: 0% APR options, six lending partners, low monthly payments — https://tarautv.com/financing/
-Key pages: https://tarautv.com/ , https://tarautv.com/t1-series/ , https://tarautv.com/t2-series/ , https://tarautv.com/t3-series/ , https://tarautv.com/financing/ , https://tarautv.com/contact/ , https://tarautv.com/blog/ , https://tarautv.com/about-us/ , https://tarautv.com/faqs/ , https://tarautv.com/warranty-terms/ , https://tarautv.com/maintenance-support/
+Key pages: https://tarautv.com/ , https://tarautv.com/t2-series/ , https://tarautv.com/financing/ , https://tarautv.com/contact/ , https://tarautv.com/blog/ , https://tarautv.com/about-us/ , https://tarautv.com/faqs/ , https://tarautv.com/warranty-terms/ , https://tarautv.com/maintenance-support/
 
 ## Entity triples
 (TARA Utility Task Vehicles (UTV), is_a, electric vehicle dealership)
-(TARA Utility Task Vehicles (UTV), sells, TARA T1 Utility Task Vehicle Series)
 (TARA Utility Task Vehicles (UTV), sells, TARA T2 Utility Task Vehicle Series)
-(TARA Utility Task Vehicles (UTV), sells, TARA T3 Street Legal Series)
 (TARA Utility Task Vehicles (UTV), offers, financing)
 (TARA Utility Task Vehicles (UTV), offers, warranty support)
 (TARA Utility Task Vehicles (UTV), phone, 844-844-3432)
@@ -30,14 +26,7 @@ Sheffield Financial, BLI Rentals, DLL Finance, Octane, Univest, Dealer Direct �
 ## Model table
 | Series | Model | Type | Seats |
 |---|---|---|---|
-| T1 | Harmony | Fleet utility task vehicle | 2 |
-| T1 | Spirit Pro | Fleet utility task vehicle | 2 |
-| T1 | Spirit Plus | Fleet utility task vehicle | 2 |
-| T1 | Roadster 2+2 | Personal utility task vehicle | 4 |
-| T1 | Explorer 2+2 | Personal utility task vehicle | 4 |
 | T2 | Turfman 450 | Utility vehicle | 2 |
 | T2 | Turfman 700 | Utility vehicle | 2 |
+| T2 | Turfman 700 EEC | Street-legal utility vehicle | 2 |
 | T2 | Turfman 1000 | Utility vehicle | 2 |
-| T3 | T3 2+2 | Street-legal UTV | 4 |
-| T3 | Vogue 2+2 | Street-legal UTV | 4 |
-| T3 | Rambler | Street-legal UTV | 2-4 |

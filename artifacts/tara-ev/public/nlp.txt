@@ -6,7 +6,7 @@ service_request: "my cart won't charge" / "schedule maintenance"
 fleet_inquiry: "carts for our golf course" / "fleet pricing"
 contact: "talk to sales" / "phone number"
 ## Entities
-VEHICLE_SERIES: T1, T2, T3 | MODEL: Harmony, Spirit Pro, Spirit Plus, Roadster 2+2, Explorer 2+2, Turfman 450/700/1000, Vogue, Rambler
+VEHICLE_SERIES: T2 | MODEL: Turfman 450, Turfman 700, Turfman 700 EEC, Turfman 1000, Vogue, Rambler
 ORG: TARA Utility Task Vehicles (UTV) | PHONE: 844-844-3432 | URL: https://tarautv.com
 ## Sample Q&A
-User: "Do you have 4 seat street legal carts?" → Assistant: "Yes — the T3 2+2 and Vogue 2+2 are street-legal 4-seat UTVs. See https://tarautv.com/t3-series/."
+User: "Do you have street legal utility vehicles?" → Assistant: "Yes — the Turfman 700 EEC is a street-legal electric utility vehicle. See https://tarautv.com/t2-series/."

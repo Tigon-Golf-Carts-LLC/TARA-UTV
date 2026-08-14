@@ -30,13 +30,10 @@
     "bodyClass": ""
   },
   "/explorer-2-2-utv-product/": {
-    "file": "explorer-2-2-utv-product.html",
-    "title": "Explorer 2+2 Electric Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Explorer 2+2 is a 4-seat electric utility task vehicle built for resorts and communities. View specs, color options, and features at TARA Utility Task Vehicles (UTV).",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/explorer-2-2-product/": {
-    "redirect": "/explorer-2-2-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/faqs/": {
     "file": "faqs.html",
@@ -51,16 +48,10 @@
     "bodyClass": ""
   },
   "/harmony-fleet-utv-product/": {
-    "file": "harmony-fleet-utv-product.html",
-    "title": "Harmony Fleet Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Harmony is a quiet, reliable 2-seat fleet utility task vehicle designed for premium golf courses. View specs, features, and color options.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/harmony-product/": {
-    "file": "harmony-product.html",
-    "title": "Harmony Electric Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Harmony electric utility task vehicle delivers quiet performance and smooth handling for golf courses and resorts. View specs and color options.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/": {
     "file": "home.html",
@@ -69,40 +60,28 @@
     "bodyClass": ""
   },
   "/horizon-4-utv-product/": {
-    "file": "horizon-4-utv-product.html",
-    "title": "Horizon 4 Electric Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Horizon 4 electric utility task vehicle seats 4 passengers with comfort and style. Explore specs, color choices, and features for golf courses and communities.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/horizon-4-product/": {
-    "redirect": "/horizon-4-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/horizon-6-utv-product/": {
-    "file": "horizon-6-utv-product.html",
-    "title": "Horizon 6 Electric Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Horizon 6 seats 6 passengers — ideal for resort shuttles and large community transport. View specs and available color options.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/horizon-6-product/": {
-    "redirect": "/horizon-6-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/lander-4-utv-product/": {
-    "file": "lander-4-utv-product.html",
-    "title": "Lander 4 Electric Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Lander 4 is a 4-seat electric utility task vehicle built for rugged terrain and demanding property work. View specs and color options.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/lander-4-product/": {
-    "redirect": "/lander-4-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/lander-6-utv-product/": {
-    "file": "lander-6-utv-product.html",
-    "title": "Lander 6 Electric Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Lander 6 carries 6 passengers across rugged terrain — perfect for large resorts, parks, and campuses. View full specs and color options.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/lander-6-product/": {
-    "redirect": "/lander-6-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/mainitenance-support/": {
     "redirect": "/maintenance-support/"
@@ -138,16 +117,10 @@
     "bodyClass": ""
   },
   "/roadster-2-2-utv-product/": {
-    "file": "roadster-2-2-utv-product.html",
-    "title": "Roadster 2+2 Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Roadster 2+2 fits 4 passengers in a sporty electric utility task vehicle body. Ideal for resorts, communities, and personal use. View full specs and colors.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/roadster-2-2-product/": {
-    "file": "roadster-2-2-product.html",
-    "title": "Roadster 2+2 Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Roadster 2+2 fits 4 passengers in a sporty electric utility task vehicle body. Ideal for resorts, communities, and personal use. View full specs and colors.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/safety-information/": {
     "file": "safety-information.html",
@@ -156,31 +129,19 @@
     "bodyClass": ""
   },
   "/spirit-plus-fleet-utv-product/": {
-    "file": "spirit-plus-fleet-utv-product.html",
-    "title": "Spirit Plus Fleet Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Spirit Plus fleet utility task vehicle delivers premium player comfort for golf course fleets. View specs, seating, and color options.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/spirit-plus-product/": {
-    "redirect": "/spirit-plus-fleet-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/spirit-pro-fleet-utv-product/": {
-    "file": "spirit-pro-fleet-utv-product.html",
-    "title": "Spirit Pro Fleet Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Spirit Pro is built for high-volume golf course fleets — durable, reliable, and easy to maintain. View specs and fleet pricing.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/spirit-pro-product/": {
-    "file": "spirit-pro-product.html",
-    "title": "Spirit Pro Electric Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA Spirit Pro electric utility task vehicle is built for performance and durability on the course. View full specs, color options, and features.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/t1-series/": {
-    "file": "t1-series.html",
-    "title": "T1 Utility Task Vehicle Series – Fleet Carts for Golf Courses",
-    "description": "The TARA T1 series includes purpose-built fleet utility task vehicles for golf courses. Explore the Harmony, Spirit Pro, and Spirit Plus models in the T1 lineup.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/t2-series/": {
     "file": "t2-series.html",
@@ -189,34 +150,25 @@
     "bodyClass": ""
   },
   "/t3-2-2-utv-product/": {
-    "file": "t3-2-2-utv-product.html",
-    "title": "T3 2+2 Street Legal Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA T3 2+2 is a street-legal 4-passenger UTV for communities and resorts. View specs, features, and color options for this premium electric cart.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/t3-2-2-lifted-utv-product/": {
-    "file": "t3-2-2-lifted-utv-product.html",
-    "title": "T3 2+2 Lifted Utility Task Vehicle | TARA Utility Task Vehicles (UTV)",
-    "description": "The TARA T3 2+2 Lifted adds extra ground clearance to the street-legal T3 platform. Perfect for communities with varied terrain. View full specs.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/t3-2-2-lifted-product/": {
-    "redirect": "/t3-2-2-lifted-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/t3-2-2-product/": {
-    "redirect": "/t3-2-2-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/t3-22-lifted-product/": {
-    "redirect": "/t3-2-2-lifted-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/t3-22-product/": {
-    "redirect": "/t3-2-2-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/t3-series/": {
-    "file": "t3-series.html",
-    "title": "T3 Street Legal Series – UTVs for Communities",
-    "description": "The TARA T3 series offers street-legal utility task vehicles (UTVs) for gated communities and resorts. Explore the T3 2+2 and T3 2+2 Lifted.",
-    "bodyClass": ""
+    "redirect": "/t2-series/"
   },
   "/techncal-support/": {
     "redirect": "/technical-support/"
@@ -3303,40 +3255,40 @@
     "bodyClass": ""
   },
   "/explorer-2-2-golf-cart-product/": {
-    "redirect": "/explorer-2-2-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/fleet-golf-carts/": {
     "redirect": "/fleet-utvs/"
   },
   "/harmony-fleet-golf-cart-product/": {
-    "redirect": "/harmony-fleet-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/horizon-4-golf-cart-product/": {
-    "redirect": "/horizon-4-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/horizon-6-golf-cart-product/": {
-    "redirect": "/horizon-6-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/lander-4-golf-cart-product/": {
-    "redirect": "/lander-4-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/lander-6-golf-cart-product/": {
-    "redirect": "/lander-6-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/roadster-2-2-golf-cart-product/": {
-    "redirect": "/roadster-2-2-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/spirit-plus-fleet-golf-cart-product/": {
-    "redirect": "/spirit-plus-fleet-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/spirit-pro-fleet-golf-cart-product/": {
-    "redirect": "/spirit-pro-fleet-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/t3-2-2-golf-cart-product/": {
-    "redirect": "/t3-2-2-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/t3-2-2-lifted-golf-cart-product/": {
-    "redirect": "/t3-2-2-lifted-utv-product/"
+    "redirect": "/t2-series/"
   },
   "/news/how-to-choose-fleet-golf-carts/": {
     "redirect": "/news/how-to-choose-fleet-utvs/"

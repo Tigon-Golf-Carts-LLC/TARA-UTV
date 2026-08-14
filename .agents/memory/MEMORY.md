@@ -6,3 +6,4 @@
 - [api-server stale port 8080](api-server-port.md) — recurring EADDRINUSE; `fuser -k 8080/tcp` then restart the workflow.
 - [Overseas news text audit](overseas-text-audit.md) — US-only framing rule: no overseas or global/export claims in news bodies, card excerpts, or alt text; re-audit after merges.
 - [Mega-menu edit quirks](menu-edit-quirks.md) — menu duplicated in all ~578 content pages; ~18 legacy pages carry a tab-indented Horizon/Lander variant; site is now T2/Turfman-only in all nav.
+- [Page retirement checklist](page-retirement-checklist.md) — retiring a URL also means deleting public/content/*.html and scrubbing the AI/SEO manifest txts, not just redirects+sitemaps.

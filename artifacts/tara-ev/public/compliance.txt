@@ -1,5 +1,5 @@
 # Compliance & Standards — TARA Utility Task Vehicles (UTV)
 - Privacy: No unnecessary personal data collection; inquiries handled via email/phone
 - Accessibility: WCAG 2.1 AA target
-- Industry: UTVs in the T3 series are designed to meet US federal UTV requirements (FMVSS 500) where applicable; street-legal operation subject to state and local law
+- Industry: Street-legal TARA utility vehicles such as the Turfman 700 EEC are designed to meet US federal low-speed vehicle requirements (FMVSS 500) where applicable; street-legal operation subject to state and local law
 - Disclosure: Independent authorized dealership; not the manufacturer
