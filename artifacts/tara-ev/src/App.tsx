@@ -236,7 +236,7 @@ export default function App() {
               </div>
             </div>
             <div class="tf-bottom">
-              <span>&copy; ${new Date().getFullYear()} TARA Utility Task Vehicles (UTV). All rights reserved.</span>
+              <span>&copy; ${new Date().getFullYear()} <a href="https://tigongolfcarts.com/tara-ev" rel="sponsored">TARA Utility Task Vehicles (UTV)</a>. All rights reserved.</span>
               <span class="tf-legal">
                 <a href="/privacy-policy/">Privacy Policy</a>
                 <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
