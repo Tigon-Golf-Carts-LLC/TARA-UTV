@@ -45,9 +45,7 @@ const outDir =
   getArg('--outDir') ?? path.join(artifactDir, 'dist', 'public');
 const origin =
   getArg('--origin') ??
-  (process.env.REPLIT_DOMAINS
-    ? `https://${process.env.REPLIT_DOMAINS.split(',')[0].trim()}`
-    : 'https://taranev.com');
+  'https://tarautv.com';
 
 // ─── Validation ───────────────────────────────────────────────────────────────
 
@@ -122,9 +120,9 @@ function extractOgImage(html) {
 // ─── Per-route HTML builder ───────────────────────────────────────────────────
 
 function buildPageHtml(routePath, routeMeta, contentHtml) {
-  const title = routeMeta.title || 'TARA Neighborhood Electric Vehicles';
-  const description = extractDescription(contentHtml);
-  const ogImage = extractOgImage(contentHtml);
+  const title = routeMeta.title || 'TARA Utility Task Vehicles';
+  const description = routeMeta.description || extractDescription(contentHtml);
+  const ogImage = routeMeta.ogImage || extractOgImage(contentHtml);
   const canonicalUrl = `${origin}${routePath}`;
   const absoluteOgImage = ogImage.startsWith('http')
     ? ogImage
@@ -142,6 +140,10 @@ function buildPageHtml(routePath, routeMeta, contentHtml) {
   html = html.replace(
     /<meta\s+name="description"[^>]*\/?>/i,
     `<meta name="description" content="${escHtml(description)}" />`,
+  );
+  html = html.replace(
+    /<meta\s+name="image"[^>]*\/?>/i,
+    `<meta name="image" content="${absoluteOgImage}" />`,
   );
 
   // Replace generic og:title
@@ -162,12 +164,26 @@ function buildPageHtml(routePath, routeMeta, contentHtml) {
     `<meta property="og:image" content="${absoluteOgImage}" />`,
   );
 
-  // Inject canonical + og:url before </head>
-  const canonicalBlock = [
-    `  <link rel="canonical" href="${canonicalUrl}" />`,
-    `  <meta property="og:url" content="${canonicalUrl}" />`,
-  ].join('\n');
-  html = html.replace('</head>', `${canonicalBlock}\n</head>`);
+  html = html.replace(
+    /<link\s+rel="canonical"[^>]*\/?>/i,
+    `<link rel="canonical" href="${canonicalUrl}" />`,
+  );
+  html = html.replace(
+    /<meta\s+property="og:url"[^>]*\/?>/i,
+    `<meta property="og:url" content="${canonicalUrl}" />`,
+  );
+  html = html.replace(
+    /<meta\s+name="twitter:title"[^>]*\/?>/i,
+    `<meta name="twitter:title" content="${escHtml(title)}" />`,
+  );
+  html = html.replace(
+    /<meta\s+name="twitter:description"[^>]*\/?>/i,
+    `<meta name="twitter:description" content="${escHtml(description)}" />`,
+  );
+  html = html.replace(
+    /<meta\s+name="twitter:image"[^>]*\/?>/i,
+    `<meta name="twitter:image" content="${absoluteOgImage}" />`,
+  );
 
   // Embed page content inside #root so crawlers that don't execute JS
   // still see the full page content, headings, product specs, and links.

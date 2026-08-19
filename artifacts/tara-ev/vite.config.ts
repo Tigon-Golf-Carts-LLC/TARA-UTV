@@ -74,6 +74,7 @@ const DEV_REDIRECTS: Record<string, string> = {
   '/t1-series/': '/t2-series/',
   '/t3-series/': '/t2-series/',
 };
+const siteOrigin = 'https://tarautv.com';
 const publishedDomain = process.env.REPLIT_DOMAINS?.split(',')[0]?.trim();
 
 const absoluteOgUrls = () => ({
@@ -126,12 +127,13 @@ function extractOgImage(html: string): string {
 function injectRouteMeta(
   shellHtml: string,
   routePath: string,
-  routeTitle: string,
+  routeMeta: RouteMeta,
   contentHtml: string,
   origin: string,
 ): string {
-  const description = extractDescription(contentHtml);
-  const ogImage = extractOgImage(contentHtml);
+  const routeTitle = routeMeta.title;
+  const description = routeMeta.description || extractDescription(contentHtml);
+  const ogImage = routeMeta.ogImage || extractOgImage(contentHtml);
   const canonicalUrl = `${origin}${routePath}`;
   const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${origin}${ogImage}`;
 
@@ -140,6 +142,10 @@ function injectRouteMeta(
   html = html.replace(
     /<meta\s+name="description"[^>]*\/?>/i,
     `<meta name="description" content="${escHtml(description)}" />`,
+  );
+  html = html.replace(
+    /<meta\s+name="image"[^>]*\/?>/i,
+    `<meta name="image" content="${absoluteOgImage}" />`,
   );
   html = html.replace(
     /<meta\s+property="og:title"[^>]*\/?>/i,
@@ -153,11 +159,26 @@ function injectRouteMeta(
     /<meta\s+property="og:image"[^>]*\/?>/i,
     `<meta property="og:image" content="${absoluteOgImage}" />`,
   );
-  const canonicalBlock = [
-    `  <link rel="canonical" href="${canonicalUrl}" />`,
-    `  <meta property="og:url" content="${canonicalUrl}" />`,
-  ].join('\n');
-  html = html.replace('</head>', `${canonicalBlock}\n</head>`);
+  html = html.replace(
+    /<link\s+rel="canonical"[^>]*\/?>/i,
+    `<link rel="canonical" href="${canonicalUrl}" />`,
+  );
+  html = html.replace(
+    /<meta\s+property="og:url"[^>]*\/?>/i,
+    `<meta property="og:url" content="${canonicalUrl}" />`,
+  );
+  html = html.replace(
+    /<meta\s+name="twitter:title"[^>]*\/?>/i,
+    `<meta name="twitter:title" content="${escHtml(routeTitle)}" />`,
+  );
+  html = html.replace(
+    /<meta\s+name="twitter:description"[^>]*\/?>/i,
+    `<meta name="twitter:description" content="${escHtml(description)}" />`,
+  );
+  html = html.replace(
+    /<meta\s+name="twitter:image"[^>]*\/?>/i,
+    `<meta name="twitter:image" content="${absoluteOgImage}" />`,
+  );
   // Embed page content for crawlers
   html = html.replace(
     '<div id="root"></div>',
@@ -168,7 +189,13 @@ function injectRouteMeta(
 
 // ─── Dev middleware: serves per-route pre-rendered HTML ───────────────────────
 
-type RouteMeta = { file: string; title: string; bodyClass: string };
+type RouteMeta = {
+  file: string;
+  title: string;
+  description?: string;
+  ogImage?: string;
+  bodyClass: string;
+};
 type Routes = Record<string, RouteMeta>;
 
 const spaMetaMiddleware = (): Plugin => ({
@@ -220,16 +247,12 @@ const spaMetaMiddleware = (): Plugin => ({
         // Run Vite's own HTML transforms (so script tags are correct)
         shellHtml = await server.transformIndexHtml(reqPath, shellHtml);
 
-        const devOrigin = req.headers.host
-          ? `${req.headers['x-forwarded-proto'] ?? 'http'}://${req.headers.host}`
-          : 'http://localhost';
-
         const pageHtml = injectRouteMeta(
           shellHtml,
           reqPath,
-          meta.title,
+          meta,
           contentHtml,
-          devOrigin,
+          siteOrigin,
         );
 
         res.setHeader('Content-Type', 'text/html; charset=utf-8');
@@ -256,9 +279,7 @@ const prerenderPlugin = (): Plugin => ({
     // Use the *built* index.html as the shell so generated pages reference
     // Vite's hashed /assets/index-*.js bundles, not the TS source entry.
     const shellHtml = path.join(outDir, 'index.html');
-    const originArg = publishedDomain
-      ? `https://${publishedDomain}`
-      : 'https://taranev.com';
+    const originArg = siteOrigin;
     // Let execFileSync throw on non-zero exit — this propagates prerender
     // failures as a build error so broken output is never silently shipped.
     execFileSync(

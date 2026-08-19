@@ -4,7 +4,14 @@ import { mountInquiryForm } from './inquiryForm';
 
 const BASE = import.meta.env.BASE_URL; // e.g. "/"
 
-type RouteMeta = { file: string; title: string; description?: string; bodyClass: string; redirect?: never };
+type RouteMeta = {
+  file: string;
+  title: string;
+  description?: string;
+  ogImage?: string;
+  bodyClass: string;
+  redirect?: never;
+};
 
 type RouteRedirect = { redirect: string };
 type Routes = Record<string, RouteEntry>;
@@ -97,7 +104,7 @@ export default function App() {
         injectStructuredData(path, meta.title);
 
         // Update per-route meta: canonical, description, OG, Twitter Card.
-        const siteOrigin = 'https://www.tarautv.com';
+        const siteOrigin = 'https://tarautv.com';
         const canonicalUrl = `${siteOrigin}${path}`;
 
         // Canonical link tag
@@ -109,25 +116,32 @@ export default function App() {
         }
         canonical.setAttribute('href', canonicalUrl);
 
-        // Meta description
-        if (meta.description) {
-          const descEl = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-          if (descEl) descEl.setAttribute('content', meta.description);
-        }
+        const setMeta = (selector: string, attribute: 'name' | 'property', value: string) => {
+          let tag = document.querySelector<HTMLMetaElement>(selector);
+          if (!tag) {
+            tag = document.createElement('meta');
+            tag.setAttribute(attribute, selector.match(/["']([^"']+)["']/)?.[1] ?? '');
+            document.head.appendChild(tag);
+          }
+          tag.setAttribute('content', value);
+        };
+        const description = meta.description ?? '';
+        const socialImage = `${siteOrigin}${meta.ogImage ?? '/images/og-image.png'}`;
 
-        // Open Graph: og:title, og:description, og:url
-        const ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]');
-        if (ogTitle) ogTitle.setAttribute('content', meta.title);
-        const ogDesc = document.querySelector<HTMLMetaElement>('meta[property="og:description"]');
-        if (ogDesc && meta.description) ogDesc.setAttribute('content', meta.description);
-        const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]');
-        if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
+        // Standard meta description and image.
+        setMeta('meta[name="description"]', 'name', description);
+        setMeta('meta[name="image"]', 'name', socialImage);
 
-        // Twitter Card: twitter:title, twitter:description
-        const twTitle = document.querySelector<HTMLMetaElement>('meta[name="twitter:title"]');
-        if (twTitle) twTitle.setAttribute('content', meta.title);
-        const twDesc = document.querySelector<HTMLMetaElement>('meta[name="twitter:description"]');
-        if (twDesc && meta.description) twDesc.setAttribute('content', meta.description);
+        // Open Graph: page-specific title, description, image, and URL.
+        setMeta('meta[property="og:title"]', 'property', meta.title);
+        setMeta('meta[property="og:description"]', 'property', description);
+        setMeta('meta[property="og:image"]', 'property', socialImage);
+        setMeta('meta[property="og:url"]', 'property', canonicalUrl);
+
+        // Twitter preview mirrors the Open Graph metadata.
+        setMeta('meta[name="twitter:title"]', 'name', meta.title);
+        setMeta('meta[name="twitter:description"]', 'name', description);
+        setMeta('meta[name="twitter:image"]', 'name', socialImage);
 
         if (meta.bodyClass) document.body.className = meta.bodyClass;
         containerRef.current.innerHTML = html;
