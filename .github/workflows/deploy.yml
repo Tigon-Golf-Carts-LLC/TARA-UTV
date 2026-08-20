@@ -1,0 +1,85 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# GITHUB_TOKEN needs to read the repo, publish the Pages artifact, and mint the
+# OIDC token actions/deploy-pages uses to authenticate the deployment.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One Pages deployment at a time. In-progress runs finish rather than being
+# cancelled, so a half-uploaded artifact is never published.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  # ── Change these two to move the site ────────────────────────────────────
+  # Bare domain used for canonical URLs, OG tags, sitemaps, and CNAME.
+  SITE_DOMAIN: tarautv.com
+  # "/" for a custom domain or <user>.github.io.
+  # "/TARA-UTV/" for a project site at https://<user>.github.io/TARA-UTV/.
+  BASE_PATH: "/"
+  # Set to the bare domain to publish a CNAME, or "" to publish without one.
+  # Leaving it unset makes it follow BASE_PATH (custom domain only when "/").
+  CUSTOM_DOMAIN: tarautv.com
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch build-time data snapshot
+        env:
+          # Optional. Only needed if you point the build at a remote content
+          # API; without them the snapshot is derived from committed content.
+          CONTENT_API_URL: ${{ secrets.CONTENT_API_URL }}
+          CONTENT_API_KEY: ${{ secrets.CONTENT_API_KEY }}
+        run: npm run fetch-data
+
+      - name: Build static site
+        env:
+          # Optional. Third-party form endpoint (e.g. Formspree). When unset,
+          # the contact form falls back to a prefilled mailto: message.
+          VITE_FORM_ENDPOINT: ${{ secrets.VITE_FORM_ENDPOINT }}
+        run: npm run build:site
+
+      - name: Verify the published tree
+        run: |
+          set -e
+          for f in index.html 404.html .nojekyll sitemap.xml robots.txt data/site.json; do
+            test -e "dist/$f" || { echo "::error::dist/$f is missing"; exit 1; }
+          done
+          echo "dist/ size: $(du -sh dist | cut -f1), $(find dist -name index.html | wc -l) HTML routes"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

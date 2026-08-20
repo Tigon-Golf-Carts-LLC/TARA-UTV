@@ -12,4 +12,4 @@ Rebrand (Aug 2026): the whole site is now "TARA Utility Task Vehicles (UTV)" at 
 - Home hero slider uses UTV-scene images (`hero-cream-utv-lakeside`, `hero-mountain-trail-utv`, `hero-black-utv-ranch` + existing utility scenes); no golf-course hero photos.
 - **Why:** client rebrand + SEO; slug changes 404 pages unless routes.json, both redirect maps, internal links, and sitemaps change together.
 - **How to apply:** after any merge or content regeneration, re-grep for `golf cart`, `Neighborhood Electric`, `\bNEV\b`, `taragolfcart` in `public/content`, `index.html`, `src` — merges have re-introduced old content before (see client-requested-removals).
-- Inquiry email recipient is now sales@tarautv.com.
+- Inquiry email recipient is now taradealership@gmail.com (dealership CTA line: 1-844-844-3432).

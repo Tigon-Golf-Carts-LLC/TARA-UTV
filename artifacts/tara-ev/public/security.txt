@@ -1,5 +1,0 @@
-Contact: mailto:info@tarautv.com
-Expires: 2027-08-13T00:00:00.000Z
-Preferred-Languages: en
-Canonical: https://tarautv.com/security.txt
-Policy: Report vulnerabilities responsibly to info@tarautv.com. We do not currently operate a bug bounty program.
